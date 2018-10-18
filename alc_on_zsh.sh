@@ -2,11 +2,12 @@
 
 # option
 CMDNAME=`basename $0`
-while getopts hi OPT
+while getopts hio OPT
 do
   case $OPT in
     "i" ) FLG_i="TRUE" ;;
     "h" ) FLG_h="TRUE" ;;
+    "o" ) FLG_o="TRUE" ;;
       * ) echo "Usage: $CMDNAME [-i] word" 1>&2
           exit 1;;
   esac
@@ -16,6 +17,10 @@ if [[ "$FLG_h" = "TRUE" ]]; then
   echo "
     Usage: $CMDNAME [-i] word
   " | sed  -e 's/^ *//g' -e '1d' -e '$d'
+fi
+if [[ "$FLG_o" = "TRUE" ]]; then
+  open 'http://eow.alc.co.jp/search?q='$1
+  exit 0
 fi
 # color
 red=`tput setaf 1`
