@@ -18,12 +18,13 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 
 2. クローンしシンボリックリンクを貼る
 ```zsh
-% cd ~/
-% git clone https://github.com/funsaiteu/alc_on_zsh.git
+% cd ~/ # どこでも良いけどとりあえず
+% git clone https://github.com/funsaiteu/alc_on_zsh.git # ギットクローン!
 % cd alc_on_zsh
 % chmod 755 alc
-% ln -si /Users/(username)/alc_on_zsh/alc /usr/local/bin
-% ln -si /Users/(username)/alc_on_zsh/_alc /usr/local/share/zsh/site-functions
+% ln -si /Users/(username)/alc_on_zsh/alc /usr/local/bin # コマンドとして使用可能に
+% sudo mkdir -pv /usr/local/share/zsh/site-functions # fpathの通っている場所へ
+% sudo ln -si /Users/(username)/alc_on_zsh/_alc /usr/local/share/zsh/site-functions # 補完が効くように
 ```
 
 ## 使用例
