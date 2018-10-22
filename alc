@@ -25,8 +25,12 @@ if [[ "$FLG_o" = "TRUE" ]]; then
 fi
 # color
 red=`tput setaf 1`
+green=`tput setaf 2`
 white=`tput setaf 7`
 reset=`tput sgr0`
+bold=`tput bold`
+# alc
+func_alc(){
 local NUM=`w3m -dump 'http://eow.alc.co.jp/search?q='$1 | grep -n 単語帳 | head -1 | awk -F ':' '{print $1}'`
 local NULL=""
 if [[ $NUM = $NULL ]]; then
@@ -35,5 +39,19 @@ else
   NUM=`expr $NUM - 1`
   local dic=`w3m -dump 'http://eow.alc.co.jp/search?q='$1 | head -$NUM | tail -n +36`
   echo "${white}${dic}${reset}"
+fi
+}
+func_alc $1
+if [[ "$FLG_i" = "TRUE" ]]; then
+  echo $NULL
+  echo -n "${bold}${green}alc>${reset} "
+  read str
+  while [[ "$str" != $NULL ]]
+  do
+    func_alc "$str"
+    echo $NULL
+    echo -n "${bold}${green}alc>${reset} "
+    read str
+  done
 fi
 exit 0
