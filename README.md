@@ -23,6 +23,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 % cd alc_on_zsh
 % chmod 755 alc
 % ln -si /Users/(username)/alc_on_zsh/alc /usr/local/bin
+% ln -si /Users/(username)/alc_on_zsh/_alc /usr/local/share/zsh/site-functions
 ```
 
 ## 使用例
