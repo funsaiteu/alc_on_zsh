@@ -16,7 +16,14 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 % port install w3m
 ```
 
-2. `~/.zshrc`内にコードを記述
+2. クローンしシンボリックリンクを貼る
+```zsh
+% cd ~/
+% git clone https://github.com/funsaiteu/alc_on_zsh.git
+% cd alc_on_zsh
+% chmod 755 alc
+% ln -si /Users/(username)/alc_on_zsh/alc /usr/local/bin
+```
 
 ## 使用例
 
@@ -30,20 +37,10 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 %
 ```
 
-* aliasを使用
-
-```zsh
-% a git
-    【名】
-        〈英話〉ばか、間抜｛まぬ｝け、くそったれ（野郎｛やろう｝）
-    【発音】gít、【＠】ギットゥ
-%
-```
-
 * 熟語は`space`の代わりに`+`を用いることによって検索可能
 
 ```zsh
-% a pros+and+cons
+% alc pros+and+cons
     賛否両論｛さんぴりょうろん｝、良い点と悪い点
     ・Let's discuss the pros and cons of the proposal. : その提案のプラス面とマ
     イナス面について話し合おう。
@@ -54,7 +51,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 * スペルミスをした場合
 
 ```zsh
-% a ggit
+% alc ggit
 failed
 %
 ```
