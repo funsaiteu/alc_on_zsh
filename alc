@@ -2,25 +2,30 @@
 
 # option
 CMDNAME=`basename $0`
-while getopts hio OPT
+while getopts hiov OPT
 do
   case $OPT in
     "i" ) FLG_i="TRUE" ;;
     "h" ) FLG_h="TRUE" ;;
     "o" ) FLG_o="TRUE" ;;
-      * ) echo "Usage: $CMDNAME [-h] [-i word] [-o word]" 1>&2
+    "v" ) FLG_v="TRUE" ;;
+      * ) echo "Usage: $CMDNAME [-h] [-i word] [-o word] [-v]" 1>&2
           exit 1;;
   esac
 done
 shift `expr $OPTIND - 1`
 if [[ "$FLG_h" = "TRUE" ]]; then
   echo "
-    Usage: $CMDNAME [-h] [-i word] [-o word]
+    Usage: $CMDNAME [-h] [-i word] [-o word] [-v]
   " | sed  -e 's/^ *//g' -e '1d' -e '$d'
   exit 0
 fi
 if [[ "$FLG_o" = "TRUE" ]]; then
   open 'http://eow.alc.co.jp/search?q='$1
+  exit 0
+fi
+if [[ "$FLG_v" = "TRUE" ]]; then
+  echo 1.0.0
   exit 0
 fi
 # color

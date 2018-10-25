@@ -4,5 +4,6 @@ _alc(){
   _arguments \
   '(- *)-h[show help]' \
   '(- *)-i[interactive mode]' \
-  '(- *)-o[open browser]'
+  '(- *)-o[open browser]' \
+  '(- *)-v[check version]'
 }

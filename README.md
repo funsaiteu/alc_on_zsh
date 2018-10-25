@@ -95,3 +95,11 @@ alc> % # ^D(EOF)を入力して終了
 % alc -o git
 %
 ```
+
+* -v ---> check version
+
+```zsh
+% alc -v
+1.0.0
+%
+```
