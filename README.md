@@ -14,7 +14,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 
 ```zsh
 % sudo port selfupdate
-% port install w3m
+% sudo port install w3m
 ```
 
 2. クローンしシンボリックリンクを貼る
@@ -67,7 +67,7 @@ failed
 
 ```zsh
 % alc -h
-Usage: alc [-h] [-i word] [-o word]
+Usage: alc [-h] [-i word] [-o word] [-v]
 %
 ```
 
