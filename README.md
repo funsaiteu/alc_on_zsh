@@ -8,7 +8,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 
 ## 下準備
 
-1. w3mをインストール
+### w3mをインストール
 
 * macportsを使用する場合
 
@@ -17,7 +17,8 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 % sudo port install w3m
 ```
 
-2. クローンしシンボリックリンクを貼る
+### クローンしシンボリックリンクを貼る
+
 ```zsh
 % cd ~/ # どこでも良いけどとりあえず
 % git clone https://github.com/funsaiteu/alc_on_zsh.git # ギットクローン!
@@ -30,7 +31,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 
 ## 使用例
 
-* 標準
+### 標準
 
 ```zsh
 % alc git
@@ -41,7 +42,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 %
 ```
 
-* 熟語は`space`の代わりに`+`を用いることによって検索可能
+### 熟語は`space`の代わりに`+`を用いることによって検索可能
 
 ```zsh
 % alc pros+and+cons
@@ -53,7 +54,7 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 %
 ```
 
-* スペルミスをした場合
+### スペルミスをした場合
 
 ```zsh
 % alc ggit
@@ -63,7 +64,7 @@ failed
 
 ## オプション
 
-* -h ---> show help
+### -h ---> show help
 
 ```zsh
 % alc -h
@@ -71,7 +72,8 @@ Usage: alc [-h] [-i word] [-o word] [-v]
 %
 ```
 
-* -i ---> interactive mode
+### -i ---> interactive mode
+
 ```zsh
 % alc -i git
 
@@ -89,17 +91,23 @@ alc> % # ^D(EOF)を入力して終了
 %
 ```
 
-* -o ---> open browser
+### -o ---> open browser
 
 ```zsh
 % alc -o git
 %
 ```
 
-* -v ---> check version
+### -v ---> check version
 
 ```zsh
 % alc -v
 1.0.0
 %
 ```
+
+## ToDo
+
+* シンボリックリンクを貼るときのコマンドをコピペだけでできるように
+* 熟語をスペース区切りで入力可能に
+* -iモードを終了する際にEOFではなくReturnでも終了してしまうbugをどの方向に修正するか
