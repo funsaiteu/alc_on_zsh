@@ -14,6 +14,7 @@ do
   esac
 done
 shift `expr $OPTIND - 1`
+temp=`echo $* | sed 's/\ /+/g'`
 if [[ "$FLG_h" = "TRUE" ]]; then
   echo "
     Usage: $CMDNAME [-h] [-i word] [-o word] [-v]
@@ -21,7 +22,7 @@ if [[ "$FLG_h" = "TRUE" ]]; then
   exit 0
 fi
 if [[ "$FLG_o" = "TRUE" ]]; then
-  open 'http://eow.alc.co.jp/search?q='$1
+  open 'http://eow.alc.co.jp/search?q='$temp
   exit 0
 fi
 if [[ "$FLG_v" = "TRUE" ]]; then
@@ -36,17 +37,17 @@ reset=`tput sgr0`
 bold=`tput bold`
 # alc
 func_alc(){
-local NUM=`w3m -dump 'http://eow.alc.co.jp/search?q='$1 | grep -n 単語帳 | head -1 | awk -F ':' '{print $1}'`
+local NUM=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | grep -n 単語帳 | head -1 | awk -F ':' '{print $1}'`
 local NULL=""
 if [[ $NUM = $NULL ]]; then
   echo "${red}failed${reset}"
 else
   NUM=`expr $NUM - 1`
-  local dic=`w3m -dump 'http://eow.alc.co.jp/search?q='$1 | head -$NUM | tail -n +36`
+  local dic=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | head -$NUM | tail -n +36`
   echo "${white}${dic}${reset}"
 fi
 }
-func_alc $1
+func_alc $temp
 if [[ "$FLG_i" = "TRUE" ]]; then
   echo $NULL
   echo -n "${bold}${green}alc>${reset} "
