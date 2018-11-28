@@ -42,10 +42,17 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 %
 ```
 
-### 熟語は`space`の代わりに`+`を用いることによって検索可能
+### 熟語は`space` ~~の代わりに+~~ を用いることによって検索可能
 
 ```zsh
-% alc pros+and+cons
+# % alc pros+and+cons
+# 
+#     賛否両論｛さんぴりょうろん｝、良い点と悪い点
+#     ・Let's discuss the pros and cons of the proposal. : その提案のプラス面とマ
+#     イナス面について話し合おう。
+#     ・The pros and cons are batted back and forth. : 賛否両論が入り乱れている。
+# %
+% alc pros and cons
 
     賛否両論｛さんぴりょうろん｝、良い点と悪い点
     ・Let's discuss the pros and cons of the proposal. : その提案のプラス面とマ
@@ -102,12 +109,12 @@ alc> % # ^D(EOF)を入力して終了
 
 ```zsh
 % alc -v
-1.0.0
+1.1.0
 %
 ```
 
 ## ToDo
 
 * シンボリックリンクを貼るときのコマンドをコピペだけでできるように
-* 熟語をスペース区切りで入力可能に
+* ~~熟語をスペース区切りで入力可能に~~ ***done***
 * -iモードを終了する際にEOFではなくReturnでも終了してしまうbugをどの方向に修正するか
