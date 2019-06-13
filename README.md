@@ -24,9 +24,9 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 % git clone https://github.com/funsaiteu/alc_on_zsh.git # ギットクローン!
 % cd alc_on_zsh
 % chmod 755 alc
-% ln -si /Users/(username)/alc_on_zsh/alc /usr/local/bin # コマンドとして使用可能に
+% ln -si `pwd`/alc /usr/local/bin # コマンドとして使用可能に
 % sudo mkdir -pv /usr/local/share/zsh/site-functions # fpathの通っている場所へ
-% sudo ln -si /Users/(username)/alc_on_zsh/_alc /usr/local/share/zsh/site-functions # 補完が効くように
+% sudo ln -si `pwd`/_alc /usr/local/share/zsh/site-functions # 補完が効くように
 ```
 
 ## 使用例
@@ -115,6 +115,6 @@ alc> % # ^D(EOF)を入力して終了
 
 ## ToDo
 
-* シンボリックリンクを貼るときのコマンドをコピペだけでできるように
+* シンボリックリンクを貼るときのコマンドをコピペだけでできるように ***done***
 * ~~熟語をスペース区切りで入力可能に~~ ***done***
 * -iモードを終了する際にEOFではなくReturnでも終了してしまうbugをどの方向に修正するか
