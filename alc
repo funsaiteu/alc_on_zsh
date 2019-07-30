@@ -55,9 +55,7 @@ if [[ "$FLG_i" = "TRUE" ]]; then
   read str
   while [[ "$str" != $NULL ]]
   do
-    # dirty hack
-    temp=$str
-    func_alc "$str"
+    alc "$str"
     echo $NULL
     echo -n "${bold}${green}alc>${reset} "
     read str
