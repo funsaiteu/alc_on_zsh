@@ -24,7 +24,8 @@ itermなどで半透明にしてhot keyを設定しておくと翻訳や論文�
 % git clone https://github.com/funsaiteu/alc_on_zsh.git # ギットクローン!
 % cd alc_on_zsh
 % chmod 755 alc
-% ln -si `pwd`/alc /usr/local/bin # コマンドとして使用可能に
+% sudo mkdir -pv /usr/local/bin # pathの通っている場所へ
+% sudo ln -si `pwd`/alc /usr/local/bin # コマンドとして使用可能に
 % sudo mkdir -pv /usr/local/share/zsh/site-functions # fpathの通っている場所へ
 % sudo ln -si `pwd`/_alc /usr/local/share/zsh/site-functions # 補完が効くように
 ```
