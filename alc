@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-version="1.1.1"
+version="2.0.0"
 # option
 CMDNAME=`basename $0`
 while getopts hiov OPT
@@ -38,13 +38,15 @@ reset=`tput sgr0`
 bold=`tput bold`
 # alc
 func_alc(){
-local NUM=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | grep -n 単語帳 | head -1 | awk -F ':' '{print $1}'`
+local NUM=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | grep -n の変化形・フレーズなど | head -1 | awk -F ':' '{print $1}'`
 local NULL=""
 if [[ $NUM = $NULL ]]; then
   echo "${red}failed${reset}"
 else
-  NUM=`expr $NUM - 1`
-  local dic=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | head -$NUM | tail -n +36`
+  START=`expr $NUM + 2`
+  END=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | grep -n 単語帳 | head -3 | tail -1 | awk -F ':' '{print $1}'`
+  END=`expr $END - 1`
+  local dic=`w3m -dump 'http://eow.alc.co.jp/search?q='$temp | sed -n ${START},${END}p`
   echo "${white}${dic}${reset}"
 fi
 }
